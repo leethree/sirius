@@ -337,7 +337,7 @@ Design.index = {
 		var imgs = node.find('img');
 		if (imgs.length > 0) {
 			node.replaceWith(imgs);
-			imgs.wrap("<div class='thumb_image'></div>");
+			imgs.removeAttr("align").wrap("<div class='thumb_image'></div>");
 		} else {
 			node.remove();
 		}
