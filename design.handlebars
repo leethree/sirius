@@ -122,6 +122,7 @@
 					</div>
 
 					<div class="project_content" data-elementresizer data-resize-parent>
+						<img src="{{print "thumb_url"}}" width="{{ thumb_width }}" height="{{ thumb_height }}" {{#if thumb_url_2x}} data-hi-res={{ thumb_url_2x }} {{/if}}>
 						{{print "project.content"}}
 					</div>
 
@@ -173,7 +174,7 @@
 		<div id="index" class="thumbnails clear" data-view="Thumbnail" data-set="Projects">
 
 			{{#projects}}
-				<div class="thumbnail" id="item_{{ id }}" name="{{ id }}" style="width: {{ thumb_width }}px" data-setid="{{ set_id }}" data-setname="{{ set_name }}">
+				<div class="thumbnail" id="item_{{ id }}" name="{{ id }}" data-setid="{{ set_id }}" data-setname="{{ set_name }}">
 						<div class="loading" data-loading="{{ id }}">
 							<img src="/_gfx/loadingAnim.gif">
 						</div>
@@ -181,14 +182,18 @@
 						<a href="{{ url }}" data-id="{{ id }}" rel="history">
 
 							<div class="thumb_image" name="">
+								{{#if_option "title_in_thumb"}}
+									<div class="thumb_title">
+										<span>{{{ title }}}</span>
+									</div>
+								{{/if_option}}
+								
 								<img src="{{print "thumb_url"}}" width="{{ thumb_width }}" height="{{ thumb_height }}" {{#if thumb_url_2x}} data-hi-res={{ thumb_url_2x }} {{/if}}>
 							</div>
 
-							{{#if_option "title_in_thumb"}}
-								<div class="thumb_title">
-									<span>{{{ title }}}</span>
-								</div>
-							{{/if_option}}
+							<div class="thumb_content">
+								{{print "content_partial_html"}}
+							</div>
 
 						</a>
 

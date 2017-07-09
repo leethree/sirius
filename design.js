@@ -2,7 +2,7 @@
  * Sirius
  */
 
-var slideMargin = 300;
+var slideMargin = 100;
 
 var Design = {
 	// Navigation
@@ -323,10 +323,24 @@ Design.index = {
 	init: function() {
 		// Mark as index
 		$("body").attr("data-view", "index");
+		
+		// Replace content images
+		$(".thumb_content").each(function(key, val) {
+			Design.index.formatContent($(val));
+		});
 
 		// Turn off navigation
 		Design.swipebar.off();
 		Design.keybindings();
+	},
+	formatContent: function(node) {
+		var imgs = node.find('img');
+		if (imgs.length > 0) {
+			node.replaceWith(imgs);
+			imgs.wrap("<div class='thumb_image'></div>");
+		} else {
+			node.remove();
+		}
 	}
 };
 

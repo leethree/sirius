@@ -134,7 +134,7 @@
 		"id": "tags_in_thumb",
 		"class": "main_options check",
 		"available": true,
-		"value": true,
+		"value": false,
 		"segments": [
 			{
 				"type": "boolean"
