@@ -17,6 +17,7 @@
 		{{{ cargo_package }}}
 
 		<script src="{{#asset}}/jquery.swipebar.js{{/asset}}"></script>
+		<script src="{{#asset}}/jquery.row-grid.min.js{{/asset}}"></script>
 		<script src="/_jsapps/_libs/cargo_plugins/elementResizer.js"></script>
 	</head>
 	<body data-bodyview="{{route.body_view}}">
@@ -47,9 +48,21 @@
 			</div>
 			{{/if}}
 
-			<div class="header_text">
+			<div class="header_text left">
 				<a href="{{ site.direct_link }}" {{#if_any route.search route.is_set}}{{else}}rel="show_index"{{/if_any}}>
 					{{{ site.header_text }}}
+				</a>
+			</div>
+			
+			<div class="header_text mid">
+				<a href="/About" rel="history">
+					Tao
+				</a>
+			</div>
+			
+			<div class="header_text right">
+				<a href="/About" rel="history">
+					Lin
 				</a>
 			</div>
 
@@ -121,8 +134,7 @@
 
 					</div>
 
-					<div class="project_content" data-elementresizer data-resize-parent>
-						<img src="{{print "thumb_url"}}" width="{{ thumb_width }}" height="{{ thumb_height }}" {{#if thumb_url_2x}} data-hi-res={{ thumb_url_2x }} {{/if}}>
+					<div class="project_content rellink" rel="show_index" data-elementresizer data-resize-parent>
 						{{print "project.content"}}
 					</div>
 
@@ -179,7 +191,7 @@
 							<img src="/_gfx/loadingAnim.gif">
 						</div>
 
-						<a href="{{ url }}" data-id="{{ id }}" rel="history">
+						<div class="rellink" href="{{ url }}" data-id="{{ id }}" rel="history">
 
 							<div class="thumb_image" name="">
 								{{#if_option "title_in_thumb"}}
@@ -195,7 +207,7 @@
 								{{print "content_partial_html"}}
 							</div>
 
-						</a>
+						</div>
 
 						{{#if_option "tags_in_thumb"}}
 							<div class="thumb_tags">

@@ -2,7 +2,7 @@
  * Sirius
  */
 
-var slideMargin = 100;
+var slideMargin = 20;
 
 var Design = {
 	// Navigation
@@ -25,7 +25,7 @@ var Design = {
 			setTimeout(function() {
 				Design.init();
 			}, 1);
-
+		
 			return;
 		}
 
@@ -38,7 +38,7 @@ var Design = {
 		});
 
 		// Turn it on
-		Design.swipebar.on();
+		// Design.swipebar.on();
 		Design.scroll();
 		Design.paginate();
 		Design.solo.init();
@@ -157,8 +157,9 @@ Design.project = {
 		Design.project.formatText($(".project_content"));
 
 		// Refresh the plugin
-		Design.swipebar.setElements();
-		Design.swipebar.refresh();
+		// Design.swipebar.setElements();
+		// Design.swipebar.refresh();
+		Design.swipebar.off();
 
 		setTimeout(function() {
 			$(window).trigger("resize");
@@ -193,18 +194,18 @@ Design.project = {
 			var block_width = obj.slides[obj.data.slides.active].width();
 
 			// Resize and position the containing element
-			Design.swipebar.resize(el, block_height, block_width);
+			// Design.swipebar.resize(el, block_height, block_width);
 			obj.resizeContainer();
 		}
 	},
 
 	resizeVideo: function($element) {
-		Design.swipebar.resize($element);
+		// Design.swipebar.resize($element);
 	},
 
 	formatText: function(node, includeWhitespaceNodes) {
 		var c = node.contents();
-		var validTags = ['img', 'object', 'video', 'audio', 'iframe', 'div'];
+		var validTags = ['object', 'video', 'audio', 'iframe', 'div'];
 		var pageCache = [];
 		var pageCount = 0;
 		var textPages = {};
@@ -217,12 +218,15 @@ Design.project = {
 					textPages[pageCount] = pageCache;
 					pageCache = [];
 					pageCount++;
+					return;
 				}
 			} else {
-				if (isValidText(val.data) && val.nodeType != 8) {
+				if (isValidText(val.data, true) && val.nodeType != 8) {
 					pageCache.push(val);
+					return;
 				}
 			}
+			$(val).remove();
 		});
 
 		// Still some stuff left in cache
@@ -328,10 +332,27 @@ Design.index = {
 		$(".thumb_content").each(function(key, val) {
 			Design.index.formatContent($(val));
 		});
+		
+		Design.index.layoutImage();
 
 		// Turn off navigation
 		Design.swipebar.off();
 		Design.keybindings();
+	},
+	layoutImage: function() {
+		$(".thumb_image img").each(function() { 
+			var width = $(this).attr('width_o') || $(this).attr('width'); 
+			var height = $(this).attr('height_o') || $(this).attr('height'); 
+			$(this).attr("height", 800); 
+			$(this).attr("width", 800 / height * width); 
+		});
+		var options = {
+			itemSelector: ".thumb_image", 
+			minMargin: 15, 
+			maxMargin: 25, 
+			resize: true
+		};
+		$("#index").rowGrid(options);
 	},
 	formatContent: function(node) {
 		var imgs = node.find('img');

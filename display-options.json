@@ -74,7 +74,7 @@
 		"id": "index_link_in_project",
 		"class": "main_options check",
 		"available": false,
-		"value": true,
+		"value": false,
 		"segments": [
 			{
 				"type": "boolean"
@@ -89,7 +89,7 @@
 		"id": "next_link_in_project",
 		"class": "main_options check",
 		"available": false,
-		"value": true,
+		"value": false,
 		"segments": [
 			{
 				"type": "boolean"
