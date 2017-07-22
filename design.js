@@ -221,7 +221,7 @@ Design.project = {
 					return;
 				}
 			} else {
-				if (isValidText(val.data, true) && val.nodeType != 8) {
+				if (isValidText(val.data || val.innerHTML, true) && val.nodeType != 8) {
 					pageCache.push(val);
 					return;
 				}
@@ -280,7 +280,7 @@ Design.project = {
 			if (txt !== undefined) {
 				txt = txt.replace(/<!--([\s\S]*?)-->/mig, "");
 				txt = txt.replace(/(\r\n|\n|\r|\t| )/gm, "");
-				txt = txt.replace(/[^A-Za-z0-9\s!?\.,-\/#!$%\^&\*;:{}=\-_`~()[[\]]/g, "");
+				// txt = txt.replace(/[^A-Za-z0-9\s!?\.,-\/#!$%\^&\*;:{}=\-_`~()[[\]]/g, "");
 
 				if (txt.length > 0) {
 					return true;
@@ -333,7 +333,7 @@ Design.index = {
 			Design.index.formatContent($(val));
 		});
 		
-		Design.index.layoutImage();
+		// Design.index.layoutImage();
 
 		// Turn off navigation
 		Design.swipebar.off();
