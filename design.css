@@ -374,13 +374,12 @@ body[data-view="project"] .site_header {
 
 .project_content a {
 	color: #fff;
-	text-decoration: underline;
+	text-decoration: none;
 }
 
 .project_content a:hover {
-	background: #00f;
 	color: #fff;
-	text-decoration: none;
+	text-decoration: underline;
 }
 
 .project_content a:active {
@@ -666,6 +665,10 @@ body[data-view="index"] .thumbnails {
 	padding: 100px 10px 70px;
 }
 
+.back_button a {
+	text-decoration: underline;
+}
+
 .show_index {
 	text-align: center;
 	padding-bottom: 35px;
@@ -906,9 +909,8 @@ body[data-view="project"] #search {
 }
 
 .search_title a:hover {
-	background: #00f;
 	color: #fff;
-	text-decoration: none;
+	text-decoration: underline;
 }
 
 .search_title a:active {

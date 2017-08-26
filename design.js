@@ -262,12 +262,8 @@ Design.project = {
 			});
 
 			if (breaks < arr.length) {
-				var first = arr[0];
-				var parent = $('<p />');
-				$(first).before(parent);
-
 				$.each(arr, function(key, el) {
-					$(el).appendTo(parent);
+					$(el).wrap('<p />');
 				});
 			} else {
 				$.each(arr, function(key, el) {
