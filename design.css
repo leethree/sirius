@@ -1,6 +1,8 @@
 /**
  * Sirius
  */
+ 
+@import url(//fonts.googleapis.com/earlyaccess/notosanstc.css);
 
 body,
 html {
@@ -11,7 +13,7 @@ html {
 body {
 	background: #000;
 	color: #fff;
-	font-family: 'Helvetica Neue', 'NotoSansHans', sans-serif;
+	font-family: 'Helvetica Neue', 'Noto Sans TC', 'PingFang TC', sans-serif;
 	font-weight: 700;
 	font-size: 14px;
 	line-height: 1.6;
@@ -1609,43 +1611,3 @@ a.freshbox_nav_button#fullscreen_zoom.active svg {
 #freshbox.ie a.freshbox_nav_button#fullscreen_zoom.active:active {
 	background-position: -120px 0;
 }
-
-/* justfont */
-.jf-loading body { /*載入中不顯示*/
-  opacity: 0;
-  visibility: hidden;
-}
-.jf-active body { /*如果處理成功，直接顯示*/
-  opacity: 1;
-  visibility: visible;
-}
-.jf-inactive body { /*如果處理失敗，直接顯示*/
-  opacity: 1;
-  visibility: visible;
-}
-
-#justfont-badge {
-	display: none !important;
-}
-
-/*
-@font-face {
-	font-family: 'NotoSansHans';
-	src: url('//at.alicdn.com/t/0tuttnrulf4dkj4i.eot'); // IE9
-	src: url('//at.alicdn.com/t/0tuttnrulf4dkj4i.eot?#iefix') format('embedded-opentype'), // IE6-IE8
-	url('//at.alicdn.com/t/0tuttnrulf4dkj4i.woff') format('woff'), // chrome、firefox
-	url('//at.alicdn.com/t/0tuttnrulf4dkj4i.ttf') format('truetype'), // chrome、firefox、opera、Safari, Android, iOS 4.2+
-	url('//at.alicdn.com/t/0tuttnrulf4dkj4i.svg#NotoSansHans-Black') format('svg'); // iOS 4.1- 
-	font-weight: 900;
-}
-
-@font-face {
-	font-family: 'NotoSansHans';
-	src: url('//at.alicdn.com/t/pptu5xb03eze61or.eot'); // IE9
-	src: url('//at.alicdn.com/t/pptu5xb03eze61or.eot?#iefix') format('embedded-opentype'), // IE6-IE8
-	url('//at.alicdn.com/t/pptu5xb03eze61or.woff') format('woff'), // chrome、firefox 
-	url('//at.alicdn.com/t/pptu5xb03eze61or.ttf') format('truetype'), // chrome、firefox、opera、Safari, Android, iOS 4.2+
-	url('//at.alicdn.com/t/pptu5xb03eze61or.svg#思源黑体-正粗') format('svg'); // iOS 4.1-
-	font-weight: 700;
-}
-*/
