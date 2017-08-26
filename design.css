@@ -2,6 +2,7 @@
  * Sirius
  */
  
+@import url(//fonts.googleapis.com/earlyaccess/notosanssc.css);
 @import url(//fonts.googleapis.com/earlyaccess/notosanstc.css);
 
 body,
@@ -13,7 +14,7 @@ html {
 body {
 	background: #000;
 	color: #fff;
-	font-family: 'Helvetica Neue', 'Noto Sans TC', 'PingFang TC', sans-serif;
+	font-family: 'Helvetica Neue', 'Noto Sans SC', 'Noto Sans TC', 'PingFang SC', sans-serif;
 	font-weight: 700;
 	font-size: 14px;
 	line-height: 1.6;
